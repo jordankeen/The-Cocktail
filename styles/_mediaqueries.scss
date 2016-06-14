@@ -1,0 +1,37 @@
+
+@media screen and (max-width: 910px) {
+	.recipe-container {
+		justify-content: space-around;
+		max-width: 680px;
+	}
+	.recipe-item {
+		width: 46%;
+		margin-bottom: 30px;
+	}
+}
+@media screen and (max-width: 520px) {
+	.recipe-container {
+		margin-top: 30px;
+}
+	.recipe-item {
+		width: 86%;
+	}
+}
+@media screen and (max-width: 425px) {
+	header h1 {
+		font-size: 27px;
+	}
+	form {
+		padding: 30px 10px 30px;
+		height: auto;
+		.spirit2, .mix2 {
+			font-size: 11px;
+		}
+	}
+	main {
+		padding: 0 5px;
+	}
+	.recipe-item {
+		width: 100%;
+	}
+}

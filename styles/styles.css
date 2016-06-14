@@ -1,0 +1,505 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: \201C \201D \2018 \2019;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button, input {
+  line-height: normal;
+}
+
+button, html input[type=button],
+input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled], input[disabled] {
+  cursor: default;
+}
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body, figure {
+  margin: 0;
+}
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../images/lightroom.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  font-family: "Inconsolata";
+}
+
+header {
+  text-align: center;
+  padding: 20px 5px;
+}
+
+header h1 {
+  letter-spacing: 3px;
+  color: black;
+  background: white;
+  display: inline-block;
+  padding: 9px 27px;
+  font-weight: normal;
+  margin: 0 0 19px 0;
+}
+
+header .missing-choice {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.67);
+  padding: 230px 0 0;
+}
+
+header .missing-choice h2 {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 20px;
+  letter-spacing: 2px;
+  font-size: 31px;
+  width: 280px;
+  margin-top: 0;
+}
+
+header .missing-choice .try-again {
+  display: block;
+  margin: 0 auto;
+  background: white;
+  border: none;
+  padding: 9px 15px;
+  cursor: pointer;
+  outline: transparent;
+}
+
+form {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 30px 30px 10px;
+  text-align: left;
+  height: 530px;
+  background: rgba(255, 255, 255, 0.55);
+  position: relative;
+}
+
+form h5 {
+  background: white;
+  color: black;
+  padding: 5px 10px;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0 5px 10px 5px;
+  display: inline-block;
+}
+
+form .resultsP {
+  position: absolute;
+  left: 5px;
+  bottom: 3px;
+  margin: 0;
+  color: black;
+  font-size: 13px;
+}
+
+.spirit-choice, .mix-choice {
+  max-width: 390px;
+  margin: 10px auto 28px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.mix-choice {
+  margin-bottom: 5px;
+}
+
+.spirit2, .mix2 {
+  padding: 9px;
+  background: black;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+  transition: background 0.3s, color 0.3s;
+  text-align: center;
+}
+
+.spirit2:hover, .mix2:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+}
+
+.spirit2.selected, .mix2.selected {
+  background: white;
+  color: black;
+}
+
+.width-20 {
+  width: 17%;
+}
+
+.width-40 {
+  width: 38%;
+}
+
+.width-60 {
+  width: 57%;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+main {
+  text-align: center;
+  padding: 0 15px;
+}
+
+.submit-container {
+  text-align: center;
+}
+
+.submit, .get-more, .reset {
+  width: 104px;
+  background: white;
+  font-size: 16px;
+  padding: 7px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  outline: transparent;
+  margin: 0 auto;
+  transition: background 0.3s ,color 0.3s;
+}
+
+.submit:hover, .get-more:hover, .reset:hover {
+  color: white;
+  background: black;
+}
+
+.get-more {
+  display: none;
+  margin-bottom: 30px;
+}
+
+.reset {
+  display: none;
+}
+
+.recipe-container {
+  margin: 70px auto 40px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1130px;
+  width: 100%;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.recipe-item {
+  width: 24%;
+  padding: 17px;
+  background: rgba(243, 240, 240, 0.7);
+  position: relative;
+}
+
+.recipe-item p {
+  text-align: left;
+  color: black;
+  font-size: 14px;
+  margin: 0 0 9px 0;
+}
+
+.recipe-item span {
+  background: black;
+  color: white;
+  padding: 3px;
+}
+
+.recipe-item .ratingP {
+  float: left;
+}
+
+.recipe-item .timeP {
+  float: right;
+}
+
+.recipe-item img {
+  margin-top: 10px;
+  width: 100%;
+  box-shadow: 4px 4px 8px #777474;
+}
+
+.recipe-item h3 {
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 16px;
+  min-height: 50px;
+  margin-bottom: 10px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: black;
+  text-transform: uppercase;
+}
+
+.recipe-item h4 {
+  font-size: 14px;
+  text-align: left;
+  margin-top: 0;
+  width: 125px;
+  margin: 0 0 10px;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.recipe-item a {
+  color: black;
+  background: white;
+  padding: 6px;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+  right: 17px;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.recipe-item a:hover {
+  background: black;
+  color: white;
+}
+
+.recipe-item ul {
+  padding-left: 17px;
+  text-align: left;
+  background: black;
+  padding: 10px;
+  list-style-type: none;
+  margin-bottom: 23px;
+}
+
+.recipe-item ul li {
+  font-size: 14px;
+  margin: 2px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+footer {
+  background: black;
+  padding: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media screen and (max-width: 910px) {
+  .recipe-container {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    max-width: 680px;
+  }
+  .recipe-item {
+    width: 46%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .recipe-container {
+    margin-top: 30px;
+  }
+  .recipe-item {
+    width: 86%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  header h1 {
+    font-size: 27px;
+  }
+  form {
+    padding: 30px 10px 30px;
+    height: auto;
+  }
+  form .spirit2, form .mix2 {
+    font-size: 11px;
+  }
+  main {
+    padding: 0 5px;
+  }
+  .recipe-item {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

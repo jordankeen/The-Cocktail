@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Cocktail Generator</title>
+	<link type="image/png" href="images/dcfavicon.png" rel="icon">
+	<link rel="stylesheet" href="styles/styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<!-- Header section with form -->
+	<header> 
+
+		<div class="missing-choice">
+			<h2>Your misssing a choice</h2>
+			<button class="try-again">Try Again</button>
+		</div>
+
+		<h1>The Cocktail</h1>
+
+		<form action="">
+
+			<h5>Choose Your Spirit:</h5>
+
+			<div class="spirit-choice">
+
+				<label for="Gin" class="spirit2 width-20">Gin<input value="Gin" type="radio" name="spirit" id="Gin"></label>
+
+				<label for="Vodka" class="spirit2 width-40">Vodka<input value="Vodka" type="radio" name="spirit" id="Vodka"></label>
+
+				<label for="Tequila" class="spirit2 width-40">Tequila<input value="Tequila" type="radio" name="spirit" id="Tequila"></label>
+
+				<label for="Brandy" class="spirit2 width-40">Brandy<input value="Brandy" type="radio" name="spirit" id="Brandy"></label>
+
+				<label for="White Rum" class="spirit2 width-60">White Rum<input value="" type="radio" name="spirit" id="White Rum"></label>
+
+				<label for="Bourbon" class="spirit2 width-60">Bourbon<input value="Bourbon" type="radio" name="spirit" id="Bourbon"></label>
+
+				<label for="Scotch" class="spirit2 width-40">Scotch<input value="Scotch" type="radio" name="spirit" id="Scotch"></label>
+
+				<label for="Dark Rum" class="spirit2 width-40">Dark Rum<input value="Dark Rum" type="radio" name="spirit" id="Dark Rum"></label>
+
+				<label for="Spiced Rum" class="spirit2 width-40">Spiced Rum<input value="Spiced Rum" type="radio" name="spirit" id="Spiced Rum"></label>
+
+				<label for="anySpirit" class="spirit2 width-20">Any<input value="" type="radio" name="spirit" id="anySpirit" checked="checked"></label>
+
+			</div>
+
+			<h5>Choose Your Mix:</h5>
+
+			<div class="mix-choice">
+
+				<label for="Cranberry Juice" class="mix2 width-60">Cranberry Juice<input value="Cranberry Juice" type="radio" name="mix" id="Cranberry Juice"></label>
+
+				<label for="Club Soda" class="mix2 width-40">Club Soda<input value="Club Soda" type="radio" name="mix" id="Club Soda"></label>
+
+				<label for="Lime Juice" class="mix2 width-40">Lime Juice<input value="Lime Juice" type="radio" name="mix" id="Lime Juice"></label>
+
+				<label for="Orange Juice" class="mix2 width-40">Orange Juice<input value="Orange Juice" type="radio" name="mix" id="Orange Juice"></label>
+
+				<label for="Tonic" class="mix2 width-20">Tonic<input value="Tonic" type="radio" name="mix" id="Tonic"></label>
+
+				<label for="Apple Juice" class="mix2 width-60">Apple Juice<input value="Apple Juice" type="radio" name="mix" id="Apple Juice"></label>
+
+				<label for="Ginger Ale" class="mix2 width-40">Ginger Ale<input value="Ginger Ale" type="radio" name="mix" id="Ginger Ale"></label>
+
+				<label for="Cola" class="mix2 width-20">Cola<input value="Cola" type="radio" name="mix" id="Cola"></label>
+
+				<label for="Grapefruit Juice" class="mix2 width-60">Grapefruit Juice<input value="Grapefruit Juice" type="radio" name="mix" id="Grapefruit Juice"></label>
+
+				<label for="Any" class="mix2 width-20">Any<input value="" type="radio" name="mix" id="Any" checked="checked"></label>
+
+			</div>	
+
+			<div class="submit-container">
+				<input type="submit" value="submit" class="submit">
+				<input type="submit" value="reset" class="reset">
+			</div>
+
+			
+			
+
+
+		</form>
+	</header>
+<!-- Main section, Recipe's get sent into container -->
+	<main>
+		<div class="recipe-container">
+
+		</div>
+<!-- Get more results button -->
+		<input type="submit" value="get more" class="get-more">
+	</main>
+<!-- Footer -->
+	<footer>
+		<p>Copyright &copy 2016 - Recipes from Yummly API - Created by Jordan Keen</p>
+	</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.7.2/jquery.smooth-scroll.min.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Background Image Source: Unsplash.com -->
+	
+</body>
+</html>
