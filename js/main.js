@@ -7,7 +7,6 @@ var cocktailApp = {};
 // one after gone through loop and has been displayed.
 var recipeArray = [];
 
-
 // Add 'selected' class when choice is made
 $('.spirit2').on('change', function() {
 	$('.spirit2').removeClass('selected'); 
@@ -21,47 +20,58 @@ $('.mix2').on('change', function() {
 // Code to run when app kicks off
 cocktailApp.init = function () {
 
-// On click of submit button, send selected choices into
-// ajax call parameters
-	$('form').on('submit', function(event) {
+	// On click of submit button, send selected choices into
+	// ajax call parameters
+	$('.submit').on('click', function(event) {
 		event.preventDefault();
 
-// Hide submit button and show get more and reset button
+		// Show Loading screen
+		$('.loading').fadeIn();
+
+		// Hide submit button and show get more and reset button
 		$('.submit').hide();
 		$('.get-more').show();
 		$('.reset').show();
 
-// store value of user's choices in variables
+		// store value of user's choices in variables
 		var spiritChoice = $('input[name=spirit]:checked').val();
 
 		var mixChoice = $('input[name=mix]:checked').val();
 
-// Concatenate both choices into one variable
+		// Concatenate both choices into one variable
 		var userChoices = spiritChoice + " " + mixChoice;
 
-// hide get more button when new choices are selected
-// and show submit button
+		// hide get more button when new choices are selected
+		// and show submit button
 		$('input[type=radio]').on('change', function (){
 			$('.submit').show();
 			$('.get-more').hide();
 		});
 
-// Empty Result container on submit to clear for new results
+		// Empty Result container on submit to clear for new results
 		$('.recipe-container').empty();
 
-// Get data based on users selections
+		// Get data based on users selections
 		cocktailApp.getData(userChoices);
 
 	});
 
 // Get More button runs display.Recipe through recipeArray
 	$('.get-more').on('click', function () {
-		$('.recipe-container').empty();
-		cocktailApp.displayRecipe(recipeArray);
-		$.smoothScroll({
-			scrollTarget: 'main'
-		});	
+
+		// Only get more recipes if there are 4 or more left in recipeArray
+		if($(recipeArray).length > 4) {
+			$('.get-more').attr('value', 'Get More');
+			// Show loading screen
+			$('.loading').fadeIn();
+			// Get more recipes
+			cocktailApp.displayRecipe(recipeArray);
+		} else {
+			$('.get-more').attr('value', 'Sorry you have been cut off.');
+		}
+
 	});
+	
 // Reset Button, removes results container, resets values, shows Submit Button 
 	$('.reset').on('click', function (event) {
 		event.preventDefault();
@@ -73,13 +83,14 @@ cocktailApp.init = function () {
 		$('input[name=spirit]:checked').val('any');
 		$('input[name=mix]:checked').val('any');
 		$('.reset').hide();  
+		$('.main').hide();
 	});
 
 };
 
 cocktailApp.getData = function (searchRecipe) {
 
-// Make Ajax call to get data
+	// Make Ajax call to get data
 	 $.ajax( {
 	 	url: 'https://api.yummly.com/v1/api/recipes',
 	 	method: 'GET',
@@ -89,7 +100,7 @@ cocktailApp.getData = function (searchRecipe) {
 	 		_app_key: 'fa580e68dd3f8098e5dc06b8f736b1d5',
 	 		requirePictures: true,
 	 		allowedCourse: 'course^course-Cocktails',
-	 		maxResult: 32,
+	 		maxResult: 36,
 	 		q: searchRecipe + " cocktail"
 	 	}
 	 })
@@ -103,9 +114,10 @@ cocktailApp.getData = function (searchRecipe) {
 };
 // Display recipes
 cocktailApp.displayRecipe = function(recipes) {
-// Using for loop, grab data from each recipe and
-// send to html. 
- 	for(var i = 0; i < 4; i++) {
+
+	// Using for loop, grab data from each recipe and
+	// send to html. 
+ 	for(var i = 0; i < 8; i++) {
  		// var recipe object
  		var item = recipes[0];
  		// console.log(item);
@@ -139,22 +151,44 @@ cocktailApp.displayRecipe = function(recipes) {
 		// Remove each recipe from recipeArray after it has been looped through, this is
 		// done so Get More option will go through the objects of original ajax call.
 		recipeArray.shift();
-		// console.log(recipes)
 		
 	};
+
+	// Show Main section with recipe container
+	$('.main').show();
+
+	// Scroll down to recipes
+	$.smoothScroll({
+		scrollTarget: 'main'
+	});
+
+	// Function for fadeout of loading screen
+	function loadingFadeOut() {
+		$(".loading").fadeOut();
+	}
+
+	// Run loadingFadeOut() with timeout delay
+	setTimeout(loadingFadeOut, 1000);
+
 
 };
 
 // Document Ready
-
 $(function() {
+
+	// Recipe ajax call
 	cocktailApp.init();
 
-		// Smooth scroll on click
-	$('.submit').on('click', function(){
-		$.smoothScroll({
-			scrollTarget: 'main'
-		});
+	// Function for info modal open
+	$('.info-button').on('click', function (event) {
+		event.preventDefault();
+		$('.info-modal').fadeIn();
+	});
+
+	// Close info modal
+	$('.info-modal-close').on('click', function (event) {
+		event.preventDefault();
+		$('.info-modal').fadeOut();
 	});
 
 });

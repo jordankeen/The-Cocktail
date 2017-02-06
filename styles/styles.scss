@@ -1,6 +1,7 @@
 
 @import 'setup';
 
+
 body {
 	background: url(../images/lightroom.jpeg);
 	background-attachment: fixed;
@@ -8,9 +9,28 @@ body {
 	color: white;
 	font-family: 'Inconsolata', ;
 }
+.loading {
+	display: none;
+	position: fixed;
+	top:0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(250,250,250,0.55);
+	img {
+		position: absolute;
+		top: calc(50% - 50px);
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		height: 50px;
+	}
+}
 header {
 	text-align: center;
-	padding: 20px 5px;
+	padding: 75px 5px 0;
+	height: calc(100vh - 52px);
+	min-height: 803px;
 	h1 {
 		letter-spacing: 3px;
 		color: black;
@@ -18,8 +38,7 @@ header {
 		display: inline-block;
 		padding: 9px 27px;
 		font-weight: normal;
-		margin: 0 0 19px 0;
-		// font-family: 'Pacifico', cursive;
+		margin: 0 0 48px 0;
 	}
 	.missing-choice {
 		display: none;
@@ -55,9 +74,8 @@ header {
 form {
 	max-width: 430px; 
 	margin: 0 auto;
-	padding: 30px 30px 10px;
+	padding: 30px;
 	text-align: left;
-	height: 530px;
 	background: rgba(255,255,255,0.55);
 	position: relative;
 	h5 {
@@ -66,7 +84,7 @@ form {
 		padding: 5px 10px;
 		font-weight: normal;
 		font-size: 14px;
-		margin: 0 5px 10px 5px;
+		margin: 0 5px 20px 5px;
 		display: inline-block;
 	}
 	.resultsP {
@@ -129,10 +147,9 @@ main {
 }
 // Submit & Get More Button Styling
 .submit, .get-more, .reset {
-	width: 104px;
 	background: white;
 	font-size: 16px;
-	padding: 7px;
+	padding: 7px 22px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	border: none;
@@ -147,12 +164,27 @@ main {
 .get-more {
 	display: none;
 	margin-bottom: 30px;
+	margin-top: 24px;
 }
 .reset {
 	display: none;
 }
+main {
+	padding-top: 70px;
+	padding-bottom: 40px;
+	display: none;
+	h2 {
+		letter-spacing: 3px;
+	    color: black;
+	    background: white;
+	    display: inline-block;
+	    padding: 9px 27px;
+	    font-weight: normal;
+	    margin: 0 0 48px 0;
+	}
+}
 .recipe-container {
-	margin: 70px auto 40px;
+	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	max-width: 1130px;
@@ -160,10 +192,11 @@ main {
 	flex-wrap: wrap;
 }
 .recipe-item {
-	width: 24%;
+	width: 23.5%;
 	padding: 17px;
 	background: rgba(243,240,240,0.70);
 	position: relative;
+	margin-bottom: 24px;
 	p {
 		text-align: left;
 		color: black;
@@ -247,4 +280,58 @@ footer {
 		text-align: center;
 	}
 }
+.info-modal {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	padding: 90px 24px 24px;
+	background-color: rgba(0,0,0,0.90);
+	.info-message {
+		p {
+			margin: 0 0 15px;
+			line-height: 1.3;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+		span {
+			color: black;
+			background: white;
+			padding: 5px 6px;
+    		display: inline-block;
+		}
+		.info-1 {
+			font-size: 34px;
+			text-transform: capitalize;
+		}
+		.info-4 {
+		    margin-top: 30px;
+		}
+	}
+}
+.info-button {
+	position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 17px;
+    border: none;
+    background: transparent;
+    padding: 5px;
+    outline: none;
+}
+.info-modal-close {
+	position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 17px;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 5px;
+    outline: none;
+}
+
 @import 'mediaqueries';
+

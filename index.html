@@ -8,16 +8,12 @@
 	<link rel="stylesheet" href="styles/styles.css">
 	<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 </head>
 
 <body>
-<!-- Header section with form -->
+<!-- Header section -->
 	<header> 
-
-		<div class="missing-choice">
-			<h2>Your misssing a choice</h2>
-			<button class="try-again">Try Again</button>
-		</div>
 
 		<h1>The Cocktail</h1>
 
@@ -80,14 +76,26 @@
 				<input type="submit" value="reset" class="reset">
 			</div>
 
+			<button class="info-button"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
 			
+			<div class="info-modal">
+				<div class="info-message">
+					<p class="info-1">Hey,</p>
+					<p class="info-2">Thanks for checking out "The Cocktail".</p>
+					<p>Its as simple as choosing:</p>
+					<p>A <span>spirit</span> and a <span>mix</span></p>
+					<p class="info-4">- Enjoy!</p>
+				</div>
+				<button class="info-modal-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+			</div>
 			
-
-
 		</form>
+
 	</header>
+	
 <!-- Main section, Recipe's get sent into container -->
-	<main>
+	<main class="main">
+		<h2>Recipes:</h2>
 		<div class="recipe-container">
 
 		</div>
@@ -96,7 +104,7 @@
 	</main>
 <!-- Footer -->
 	<footer>
-		<p>Copyright &copy 2016 - Recipes from Yummly API - Created by Jordan Keen</p>
+		<p>Copyright &copy 2017 - Recipes from Yummly API - Created by Jordan Keen</p>
 	</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
@@ -104,6 +112,8 @@
 <script src="js/main.js"></script>
 
 <!-- Background Image Source: Unsplash.com -->
-	
+<div class="loading">
+	<img src="images/default.svg">
+</div>
 </body>
 </html>

@@ -13,5 +13,3 @@ Tools used:
 - CSS3
 - Sass
 - Responsive Design
-
-May 2016
