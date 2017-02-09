@@ -41,11 +41,11 @@ cocktailApp.init = function () {
 		// Concatenate both choices into one variable
 		var userChoices = spiritChoice + " " + mixChoice;
 
-		// hide get more button when new choices are selected
-		// and show submit button
+		// On change of selected choices
 		$('input[type=radio]').on('change', function (){
 			$('.submit').show();
 			$('.get-more').hide();
+			$('.get-more').attr('value', 'Get More');
 		});
 
 		// Empty Result container on submit to clear for new results
@@ -67,7 +67,10 @@ cocktailApp.init = function () {
 			// Get more recipes
 			cocktailApp.displayRecipe(recipeArray);
 		} else {
-			$('.get-more').attr('value', 'Sorry you have been cut off.');
+			// Change get more button text
+			$('.get-more').attr('value', 'Sorry, you have been cut off.');
+			// Say hi to the creepy developer
+			console.log('Whatchu doing lookin at my log, your cut off!');
 		}
 
 	});
@@ -84,6 +87,7 @@ cocktailApp.init = function () {
 		$('input[name=mix]:checked').val('any');
 		$('.reset').hide();  
 		$('.main').hide();
+		$('.get-more').attr('value', 'Get More');
 	});
 
 };
@@ -100,7 +104,7 @@ cocktailApp.getData = function (searchRecipe) {
 	 		_app_key: 'fa580e68dd3f8098e5dc06b8f736b1d5',
 	 		requirePictures: true,
 	 		allowedCourse: 'course^course-Cocktails',
-	 		maxResult: 36,
+	 		maxResult: 44,
 	 		q: searchRecipe + " cocktail"
 	 	}
 	 })
@@ -183,12 +187,14 @@ $(function() {
 	$('.info-button').on('click', function (event) {
 		event.preventDefault();
 		$('.info-modal').fadeIn();
+		$('.modal-background').fadeIn();
 	});
 
 	// Close info modal
 	$('.info-modal-close').on('click', function (event) {
 		event.preventDefault();
 		$('.info-modal').fadeOut();
+		$('.modal-background').fadeOut();
 	});
 
 });
